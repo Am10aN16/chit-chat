@@ -24,12 +24,12 @@ app.use('/api/user', userRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/message', messageRoutes);
 
-const __dirname = path.resolve();
+const __dirname1 = path.resolve();
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '/client/build')));
+    app.use(express.static(path.join(__dirname1, '/client/build')));
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+        res.sendFile(path.join(__dirname1, 'client', 'build', 'index.html'))
     })
 } else{
     app.get('/', (req, res) => {
